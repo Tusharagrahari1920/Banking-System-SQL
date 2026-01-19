@@ -1,0 +1,33 @@
+USE banking_system;
+
+INSERT INTO customers (full_name, email, phone) VALUES
+('Rahul Sharma', 'rahul@gmail.com', '9876543210'),
+('Anita Verma', 'anita@gmail.com', '9123456789'),
+('Ram Kumar', 'Ram@gmail.com', '9199299399'),
+('Sita Kumari', 'Sita@gmail.com', '9499599699');
+
+INSERT INTO branches (branch_name, city) VALUES
+('Kanpur Main', 'Kanpur'),
+('Lucknow Central', 'Lucknow'),
+('Ayodhya Main', 'Ayodhya'),
+('Ayodhya Central', 'Ayodhya');
+
+INSERT INTO accounts (account_number, customer_id, branch_id, balance) VALUES
+('ACC1001', 1, 1, 50000),
+('ACC1002', 2, 2, 75000),
+('ACC1003', 3, 3, 80000),
+('ACC1004', 4, 4, 85000);
+
+INSERT INTO transactions (account_id, transaction_type, amount, transaction_date) VALUES
+(1, 'Deposit', 10000, '2025-01-01'),
+(2, 'Withdrawal', 5000, '2025-01-05'),
+(3, 'Deposit', 5000, '2025-01-22'),
+(4, 'Withdrawal', 10000, '2025-01-22');
+
+INSERT INTO employees (employee_name, role, branch_id, salary) VALUES
+('Amit Kumar', 'Manager', 1, 60000),
+('Neha Singh', 'Cashier', 2, 30000),
+('Rohit Verma', 'Clerk', 3, 28000),
+('Tanvi Sharma', 'Loan Officer', 4, 35000); 
+
+

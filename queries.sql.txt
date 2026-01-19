@@ -1,0 +1,53 @@
+USE banking_system;
+-- SELECT
+--     c.customer_id,
+--     c.full_name AS customer_name,
+--     a.account_number,
+--     b.branch_name,
+--     b.city,
+--     a.balance
+-- FROM customers c
+-- JOIN accounts a ON c.customer_id = a.customer_id
+-- JOIN branches b ON a.branch_id = b.branch_id;
+
+-- SELECT
+--     e.employee_id,
+--     e.employee_name,
+--     e.role,
+--     b.branch_name,
+--     b.city,
+--     e.salary
+-- FROM employees e
+-- JOIN branches b ON e.branch_id = b.branch_id;
+
+
+-- Total balance per branch
+-- SELECT b.branch_name, SUM(a.balance) AS total_balance
+-- FROM branches b
+-- JOIN accounts a ON b.branch_id = a.branch_id
+-- GROUP BY b.branch_name;
+
+-- Customers having balance more than average balance
+-- SELECT full_name
+-- FROM customers
+-- WHERE customer_id IN (
+--     SELECT customer_id
+--     FROM accounts
+--     WHERE balance > (SELECT AVG(balance) FROM accounts)
+-- );
+
+-- CREATE VIEW customer_account_view AS
+-- SELECT
+--     c.full_name,
+--     a.account_number,
+--     b.branch_name,
+--     a.balance
+-- FROM customers c
+-- JOIN accounts a ON c.customer_id = a.customer_id
+-- JOIN branches b ON a.branch_id = b.branch_id;
+
+-- SELECT * FROM customer_account_view;
+
+CREATE INDEX idx_customer_id ON accounts(customer_id);
+CREATE INDEX idx_branch_id ON accounts(branch_id);
+
